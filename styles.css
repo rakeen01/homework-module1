@@ -117,16 +117,20 @@ main p {
 
 /* ========== Partners strip ========== */
 
-section {
+section:has(#partners) {
     width: 100%;
     background-color: #4288C3;
 }
+
+
+/* make the UL section itself sit on a blue band that spans its own width */
 
 section #partners {
     width: 1200px;
     padding: 2em 0;
     margin: 0 auto;
     text-align: center;
+    background: #4288C3;
 }
 
 section #partners .partner {
@@ -150,6 +154,7 @@ footer {
     height: 155px;
     padding-bottom: 1em;
     background-color: #ecfab8;
+    clear: both;
 }
 
 footer #nondisclaimer .copy {
@@ -376,8 +381,53 @@ body {
 }
 
 
-/* keep the disclaimer under the floated social row */
+/* ========== Page: Cliffs — Header image & Grid ========== */
 
-footer #disclaimer {
-    clear: both;
+#cliffs header {
+    background: no-repeat lightgrey url(images/forest_cliff.jpg);
+    background-size: 1500px;
+}
+
+
+/* only the cliffs grid section should be transparent */
+
+section.cliff-grid {
+    background: transparent;
+}
+
+
+/* Grid container */
+
+#cliffs .cliff-grid {
+    width: 1110px;
+    margin: 2.5em auto 3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5em;
+}
+
+
+/* Card + caption bar above image */
+
+#cliffs .cliff-card {
+    background: transparent;
+}
+
+#cliffs .cliff-card figcaption {
+    background: #7b3a2f;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+
+/* Make images fully visible (no crop) */
+
+#cliffs .cliff-card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }

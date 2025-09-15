@@ -4,111 +4,19 @@
 <head>
     <title>Great Cliff's – Cliffs</title>
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        section {
-            width: 100%;
-            background-color: #4288C3;
-        }
-        
-        section #partners {
-            width: 1200px;
-            padding: 2em 0;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        section #partners .partner {
-            display: inline-block;
-            margin: 0 .75em;
-            padding: 1.3em 1.5em;
-            background: #fff;
-            border-radius: 50%;
-        }
-        
-        section #partners .partner img {
-            width: 90px;
-            height: 90px;
-        }
-        
-        footer {
-            width: 100%;
-            height: 155px;
-            padding-bottom: 1em;
-            background-color: #ecfab8;
-        }
-        
-        footer #nondisclaimer .copy {
-            padding: 3.5em 3.5em 3.5em 13em;
-            float: left;
-            font-size: .9em;
-        }
-        
-        footer #nondisclaimer .social {
-            padding: 2.5em;
-            margin-right: 9.25em;
-            float: right;
-        }
-        
-        footer #disclaimer {
-            clear: both;
-        }
-        
-        footer #disclaimer p {
-            font-size: .85em;
-            text-align: center;
-        }
-        
-        footer #nondisclaimer .social .fa {
-            padding: 15px;
-            font-size: 15px;
-            width: 15px;
-            text-align: center;
-            text-decoration: none;
-            margin: 0 4px;
-            border-radius: 50%;
-        }
-        
-        footer #nondisclaimer .social .fa:hover {
-            opacity: .7;
-        }
-        
-        footer #nondisclaimer .social .fa-facebook {
-            background: #3B5998;
-            color: #fff;
-        }
-        
-        footer #nondisclaimer .social .fa-twitter {
-            background: #55ACEE;
-            color: #fff;
-        }
-        
-        footer #nondisclaimer .social .fa-instagram {
-            background: #125688;
-            color: #fff;
-        }
-        
-        body {
-            margin: 0;
-        }
-    </style>
 </head>
 
-<body>
+<body id="cliffs">
     <div id="container">
         <header>
-            <img src="images/cliff_ocean.jpg" alt="Ocean View Cliff" width="1280" height="564">
             <div class="main-header">
-                <div class="logo">
-                    <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
-                </div>
+                <div class="logo"><img src="images/logo.png" alt="Great Cliffs Logo" width="125"></div>
                 <nav class="main-menu">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="cliffs.html">Cliffs</a></li>
+                        <li class="active"><a href="cliffs.html">Cliffs</a></li>
                         <li><a href="activities.html">Activities</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -117,45 +25,37 @@
         </header>
 
         <main>
-            <h1>Our Cliffs</h1>
+            <h2>California's Greatest Cliffs</h2>
             <p>
-                Great Cliffs is home to four spectacular cliff regions, each offering unique views and experiences. Whether you enjoy a calm seaside stroll or an adventurous hike, our cliffs have something for everyone.
+                The greatest cliffs are these four cliffs located in southern California. Each of these cliffs have their own uniqueness and beauty: West Cliff, North Cliff, East Cliff and South Cliff are the pride of California. Each cliff has many amenities to offer
+                visitors such as recreational areas, camping sites, wildlife watch spots and overnight cabins.
+            </p>
+            <p>
+                No matter which direction you head from Irvine, California, the sites are easily reached within a 100 mile radius. West Cliff is the most popular among Westcliff University campus students because of its close proximity.
             </p>
 
-            <h2>West Cliff</h2>
-            <p>
-                Famous for its dramatic sunsets and rugged coastline, West Cliff is a favorite among hikers and photographers alike.
-            </p>
+            <!-- Cliff gallery grid -->
+            <section class="cliff-grid">
+                <figure class="cliff-card">
+                    <figcaption>West Cliff</figcaption>
+                    <img src="images/cliff-west-sea.jpg" alt="West Cliff">
+                </figure>
 
-            <h2>North Cliff</h2>
-            <p>
-                Known for family-friendly trails and picnic spots, North Cliff is perfect for a relaxing day outdoors.
-            </p>
+                <figure class="cliff-card">
+                    <figcaption>North Cliff</figcaption>
+                    <img src="images/cliff-north-mountain.jpg" alt="North Cliff">
+                </figure>
 
-            <h2>East Cliff</h2>
-            <p>
-                Offering challenging hikes and stunning panoramic views, East Cliff is a must for thrill-seekers and seasoned adventurers.
-            </p>
+                <figure class="cliff-card">
+                    <figcaption>East Cliff</figcaption>
+                    <img src="images/cliff-east-river.jpg" alt="East Cliff">
+                </figure>
 
-            <h2>South Cliff</h2>
-            <p>
-                With calm waters and beginner-friendly activities, South Cliff is a great destination for kayaking and casual exploration.
-            </p>
-
-            <h2>Feedback Form</h2>
-            <form action="/feedback" method="post">
-                <p>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name">
-                </p>
-                <p>
-                    <label for="comments">Comments:</label><br>
-                    <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
-                </p>
-                <p>
-                    <input type="submit" value="Submit Feedback">
-                </p>
-            </form>
+                <figure class="cliff-card">
+                    <figcaption>South Cliff</figcaption>
+                    <img src="images/cliff-south-canyon.jpg" alt="South Cliff">
+                </figure>
+            </section>
         </main>
 
         <section>
@@ -171,9 +71,7 @@
 
         <footer>
             <div id="nondisclaimer">
-                <div class="copy">
-                    &copy; Copyright 2020 :: GreatCliffs.com
-                </div>
+                <div class="copy">&copy; Copyright 2020 :: GreatCliffs.com</div>
                 <div class="social">
                     <a href="#" class="fa fa-facebook" aria-label="Facebook"></a>
                     <a href="#" class="fa fa-instagram" aria-label="Instagram"></a>
