@@ -7,112 +7,18 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        /* Partners */
-        
-        section {
-            width: 100%;
-            background-color: #4288C3;
-        }
-        
-        section #partners {
-            width: 1200px;
-            padding: 2em 0;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        section #partners .partner {
-            display: inline-block;
-            margin: 0 .75em;
-            padding: 1.3em 1.5em;
-            background: #fff;
-            border-radius: 50%;
-        }
-        
-        section #partners .partner img {
-            width: 90px;
-            height: 90px;
-        }
-        /* Footer */
-        
-        footer {
-            width: 100%;
-            height: 155px;
-            padding-bottom: 1em;
-            background-color: #ecfab8;
-        }
-        
-        footer #nondisclaimer .copy {
-            padding: 3.5em 3.5em 3.5em 13em;
-            float: left;
-            font-size: .9em;
-        }
-        
-        footer #nondisclaimer .social {
-            padding: 2.5em;
-            margin-right: 9.25em;
-            float: right;
-        }
-        
-        footer #disclaimer {
-            clear: both;
-        }
-        
-        footer #disclaimer p {
-            font-size: .85em;
-            text-align: center;
-        }
-        
-        footer #nondisclaimer .social .fa {
-            padding: 15px;
-            font-size: 15px;
-            width: 15px;
-            text-align: center;
-            text-decoration: none;
-            margin: 0 4px;
-            border-radius: 50%;
-        }
-        
-        footer #nondisclaimer .social .fa:hover {
-            opacity: .7;
-        }
-        
-        footer #nondisclaimer .social .fa-facebook {
-            background: #3B5998;
-            color: #fff;
-        }
-        
-        footer #nondisclaimer .social .fa-twitter {
-            background: #55ACEE;
-            color: #fff;
-        }
-        
-        footer #nondisclaimer .social .fa-instagram {
-            background: #125688;
-            color: #fff;
-        }
-        
-        body {
-            margin: 0;
-        }
-    </style>
 </head>
 
-<body>
+<body id="activities">
     <div id="container">
         <header>
-            <img src="images/cliff_ocean.jpg" alt="Ocean View Cliff" width="1280" height="564">
             <div class="main-header">
-                <div class="logo">
-                    <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
-                </div>
+                <div class="logo"><img src="images/logo.png" alt="Great Cliffs Logo" width="125"></div>
                 <nav class="main-menu">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="cliffs.html">Cliffs</a></li>
-                        <li><a href="activities.html">Activities</a></li>
+                        <li class="active"><a href="activities.html">Activities</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -121,12 +27,10 @@
 
         <main>
             <h1>Activities</h1>
-            <p>
-                There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. These activities are not however run by the state park and recreational department. They are operated and manage by private vendors but are
-                partners with the state department. Therefore, for schedule inquiries or information, please contact them directly. For a list of activities, please refer to the table below:
-            </p>
+            <p>There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. These activities are not however run by the state park and recreational department. They are operated and manage by private vendors
+                but are partners with the state department. Therefore, for schedule inquiries or information, please contact them directly. For a list of activities, please refer to the table below:</p>
 
-            <table border="1">
+            <table>
                 <caption>Activities at the Cliffs</caption>
                 <thead>
                     <tr>
@@ -190,9 +94,7 @@
 
         <footer>
             <div id="nondisclaimer">
-                <div class="copy">
-                    &copy; Copyright 2020 :: GreatCliffs.com
-                </div>
+                <div class="copy">&copy; Copyright 2020 :: GreatCliffs.com</div>
                 <div class="social">
                     <a href="#" class="fa fa-facebook" aria-label="Facebook"></a>
                     <a href="#" class="fa fa-instagram" aria-label="Instagram"></a>

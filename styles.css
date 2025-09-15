@@ -1,0 +1,383 @@
+/* ========== Header (shared) ========== */
+
+header {
+    width: 100%;
+    min-height: 400px;
+    padding-top: 3em;
+}
+
+#home header {
+    background: no-repeat lightgrey url(images/cliff_ocean.jpg);
+    background-size: 1500px;
+}
+
+#activities header {
+    /* runfly.jpg */
+    background: no-repeat lightgrey url(images/runfly.jpg);
+    background-size: 1500px;
+}
+
+#contact header {
+    /* cliff_rock.jpg */
+    background: no-repeat lightgrey url(images/cliff_rock.jpg);
+    background-size: 1500px;
+}
+
+
+/* ========== Main header box (logo + nav) ========== */
+
+.main-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 700px;
+    margin: 2em auto 0 auto;
+    min-height: 100px;
+    height: 100px;
+}
+
+.main-header .logo img {
+    width: 100px;
+    height: 100px;
+    margin: 0 2em 0 0;
+    float: left;
+}
+
+
+/* ========== Navigation ========== */
+
+.main-menu {
+    margin-left: 227px;
+    font-weight: 400;
+}
+
+.main-menu ul li {
+    list-style-type: none;
+    display: inline-block;
+    float: left;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-left: 1px solid rgba(202, 204, 202, 0.6);
+    line-height: 100px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.main-menu ul li a {
+    text-decoration: none;
+    color: #888;
+}
+
+.main-menu ul li a:hover {
+    color: #9ed034;
+}
+
+.main-menu ul li.active {
+    background: #9ed034;
+    border: none;
+}
+
+.main-menu ul li.active a {
+    color: #fff;
+}
+
+
+/* ========== Main text area (Home) ========== */
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1200px;
+    margin: 3em auto;
+}
+
+main h1 {
+    color: #9ed034;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+main h2 {
+    color: #9ed034;
+    font-size: 2.2em;
+    margin: 0 0 .6em 0;
+    font-weight: 700;
+}
+
+main h3 {
+    color: #000;
+    font-size: 1.35em;
+    margin: 1.6em 0 .4em 0;
+    font-weight: 700;
+}
+
+main p {
+    line-height: 1.65;
+    color: #333;
+    margin: 0 0 .8em 0;
+}
+
+
+/* ========== Partners strip ========== */
+
+section {
+    width: 100%;
+    background-color: #4288C3;
+}
+
+section #partners {
+    width: 1200px;
+    padding: 2em 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section #partners .partner {
+    display: inline-block;
+    margin: 0 .75em;
+    padding: 1.3em 1.5em;
+    background: #fff;
+    border-radius: 50%;
+}
+
+section #partners .partner img {
+    width: 90px;
+    height: 90px;
+}
+
+
+/* ========== Footer ========== */
+
+footer {
+    width: 100%;
+    height: 155px;
+    padding-bottom: 1em;
+    background-color: #ecfab8;
+}
+
+footer #nondisclaimer .copy {
+    padding: 3.5em 3.5em 3.5em 13em;
+    float: left;
+    font-size: .9em;
+}
+
+footer #nondisclaimer .social {
+    padding: 2.5em;
+    margin-right: 9.25em;
+    float: right;
+}
+
+footer #disclaimer {
+    clear: both;
+}
+
+footer #disclaimer p {
+    font-size: .85em;
+    text-align: center;
+}
+
+
+/* ========== Social icon look ========== */
+
+footer #nondisclaimer .social .fa {
+    padding: 15px;
+    font-size: 15px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 4px;
+    border-radius: 50%;
+}
+
+footer #nondisclaimer .social .fa:hover {
+    opacity: .7;
+}
+
+footer #nondisclaimer .social .fa-facebook {
+    background: #3B5998;
+    color: #fff;
+}
+
+footer #nondisclaimer .social .fa-twitter {
+    background: #55ACEE;
+    color: #fff;
+}
+
+footer #nondisclaimer .social .fa-instagram {
+    background: #125688;
+    color: #fff;
+}
+
+
+/* ========== Page: Activities — Table styling ========== */
+
+
+/* widen + center the table */
+
+table {
+    width: 1000px;
+    margin: 4em auto 0 auto;
+}
+
+
+/* caption bar */
+
+caption {
+    background: #852B1B;
+    height: 40px;
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 1em;
+}
+
+
+/* banded header/body backgrounds */
+
+thead {
+    background: #BDE1FF;
+}
+
+tbody {
+    background: #EEFFE6;
+    text-align: center;
+}
+
+
+/* cell sizes + borders */
+
+th,
+td {
+    width: 225px;
+    height: 75px;
+    vertical-align: middle;
+    border: 1px solid #852B1B;
+}
+
+
+/* first column subhead look */
+
+tbody th:first-child {
+    width: 125px;
+    height: 50px;
+    background: #4977D1;
+    color: #fff;
+}
+
+thead th:first-child {
+    background: #BDE1FF;
+    font-weight: bold;
+}
+
+
+/* ========== Reset ========== */
+
+body {
+    margin: 0;
+}
+
+
+/* ======= Contact form ======= */
+
+#contact main form {
+    margin-top: 0.75rem;
+}
+
+
+/* Space between phone and email lines */
+
+.contactinfo .phone {
+    margin-bottom: 0.5rem;
+}
+
+.contactinfo span:first-child {
+    font-weight: bold;
+}
+
+#contact fieldset {
+    border: 2px solid #9ed034;
+    /* green border like the mock */
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+#contact legend {
+    color: #4977D1;
+    /* blue legend text */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+
+/* labels stacked with tidy spacing */
+
+#contact .textbox label,
+#contact .radios label,
+#contact .selectmenu label,
+#contact .commentbox label {
+    display: block;
+    margin: 1rem 0 .35rem;
+    font-weight: 600;
+}
+
+
+/* input sizes & borders */
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact select,
+#contact textarea {
+    width: 460px;
+    /* matches look; stays responsive below */
+    max-width: 100%;
+    padding: .45rem .6rem;
+    border: 1px solid #cfcfe6;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+
+/* radio row spacing */
+
+#contact .radios {
+    margin-top: .25rem;
+}
+
+#contact .radios input[type="radio"] {
+    margin-left: .5rem;
+}
+
+
+/* select & textarea tweaks */
+
+#contact select {
+    width: 150px;
+}
+
+#contact textarea {
+    height: 160px;
+    resize: vertical;
+}
+
+
+/* submit button */
+
+#contact .button {
+    margin-top: .75rem;
+}
+
+#contact .button input[type="submit"] {
+    background: #4977D1;
+    color: #fff;
+    border: none;
+    padding: .6rem 1.75rem;
+    cursor: pointer;
+}
+
+#contact .button input[type="submit"]:hover {
+    opacity: .9;
+}
+
+
+/* keep the disclaimer under the floated social row */
+
+footer #disclaimer {
+    clear: both;
+}
