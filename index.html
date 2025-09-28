@@ -35,11 +35,16 @@
         <main>
             <h2>Introducing California's Greatest Cliffs</h2>
             <h3>What is so unique about California cliffs?</h3>
-            <p>California cliffs are one of a kind in the United States where no cliffs are as magnificent and beautiful as them. And California is the only state that have cliffs that fronts all possible environments: sea, river, mountains and canyons.
-                There are four such individual unique cliffs: West Cliff, North Cliff, East Cliff and South Cliff. All offer fantastic overlooking views, recreational areas, camping sites, wildlife watch spots and overnight cabins.</p>
+            <p>California cliffs are one of a kind in the United States where no cliffs are as magnificent and beautiful
+                as them. And California is the only state that have cliffs that fronts all possible environments: sea,
+                river, mountains and canyons.
+                There are four such individual unique cliffs: West Cliff, North Cliff, East Cliff and South Cliff. All
+                offer fantastic overlooking views, recreational areas, camping sites, wildlife watch spots and overnight
+                cabins.</p>
 
             <h3>Where are these cliffs?</h3>
-            <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. The closest cliff to Irvine is West Cliff, which is the most popular and most visited.</p>
+            <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. The
+                closest cliff to Irvine is West Cliff, which is the most popular and most visited.</p>
         </main>
 
         <section>
@@ -63,92 +68,18 @@
                 </div>
             </div>
             <div id="disclaimer">
-                <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
+                <p>This website is designed and created solely for educational purposes only at Westcliff University.
+                    All contents are not intended for any commercial gain or use.</p>
             </div>
         </footer>
     </div>
 
-    <script>
-        // Create a time data function
-        function currentTime() {
-            // Declare variables
-            var d = new Date();            // Get current date
-            var hr = d.getHours();         // Get current hours
-            var min = d.getMinutes();      // Get current minutes
-            var sec = d.getSeconds();      // Get current seconds
-            var ampm;                      // Declare empty variable to store AM or PM
-            var utchr = d.getUTCHours();   // GMT hour
-            var timeDiff = utchr - hr;     // GMT - Local
-            var adjTimeDiff = Math.abs(timeDiff); // convert negative to positive
-            var timeZone;                  // PT, MT, CT, ET
+    <!-- Digital Clock -->
+    <script src="js/digclock.js"></script>
 
-            // Add 0 to single digits for seconds
-            if (sec < 10) {
-                sec = "0" + sec;
-            }
-            // Add 0 to single digits for minutes
-            if (min < 10) {
-                min = "0" + min;
-            }
+    <!-- Partners -->
+    <script src="js/site_scripts.js"></script>
 
-            // Determine AM or PM string + convert military hour to regular hour
-            if (hr == 12) {
-                ampm = "PM";               // Set to PM
-            } else if (hr > 12) {
-                hr -= 12;                  // Deduct 12 from hours greater than 12 (military time)
-                ampm = "PM";               // Set to PM
-            } else {
-                ampm = "AM";               // Set to AM
-            }
-
-            if (adjTimeDiff === 7 || adjTimeDiff === 8) {
-                timeZone = "PT";
-            } else if (adjTimeDiff === 6 || adjTimeDiff === 7) {
-                timeZone = "MT";
-            } else if (adjTimeDiff === 5 || adjTimeDiff === 6) {
-                timeZone = "CT";
-            } else if (adjTimeDiff === 4 || adjTimeDiff === 5) {
-                timeZone = "ET";
-            } else {
-                timeZone = ""; // outside the four zones
-            }
-
-            // Assemble time format to display
-            var time = hr + ":" + min + ":" + sec + " " + ampm + " " + timeZone;
-
-            // Display current local time on HTML element
-            document.getElementById("clock").innerText = time; // adding time
-        }
-
-        // Initial run of time data function + repeat every second
-        currentTime();                        // run once immediately
-        setInterval(currentTime, 1000);       // setting timer (1000 ms = 1s)
-    </script>
-
-    <script>
-        // Show partners footer using Javascript codes
-        (function buildPartners() {
-            var data = [
-                { src: 'images/partners/partner-bustour.png', alt: 'Partner Bus Tours' },
-                { src: 'images/partners/partner-cabinrental.png', alt: 'Partner Cabin Rental' },
-                { src: 'images/partners/partner-campingadv.png', alt: 'Partner Camping Adventure' },
-                { src: 'images/partners/partner-collegetours.png', alt: 'Partner College Tours' },
-                { src: 'images/partners/partner-rentalbike.png', alt: 'Partner Bike Rentals' },
-                { src: 'images/partners/partner-tourgroup.png', alt: 'Partner Tour Group' }
-            ];
-            var list = document.getElementById('partners');
-            if (!list) return;
-            for (var i = 0; i < data.length; i++) {
-                var li = document.createElement('li');
-                li.className = 'partner';
-                var img = document.createElement('img');
-                img.setAttribute('src', data[i].src);
-                img.setAttribute('alt', data[i].alt);
-                li.appendChild(img);
-                list.appendChild(li);
-            }
-        })();
-    </script>
 </body>
 
 </html>

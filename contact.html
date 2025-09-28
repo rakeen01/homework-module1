@@ -28,7 +28,9 @@
         <main>
             <h1>Contacting Us</h1>
             <p>
-                You can drop by the visitors information center at the cliff site that you plan on visiting. They are open 7 days a week from 8.00AM to 5.00PM. You can also contact us directly if you need additional information about the Cliffs, Hours of Operations,
+                You can drop by the visitors information center at the cliff site that you plan on visiting. They are
+                open 7 days a week from 8.00AM to 5.00PM. You can also contact us directly if you need additional
+                information about the Cliffs, Hours of Operations,
                 Facilities or questions about this site using one of the following:
             </p>
 
@@ -79,6 +81,12 @@
                         <textarea></textarea>
                     </div>
 
+                    <!-- Random Codes -->
+                    <div class="randomcode">
+                        <input type="text" name="randomcode" placeholder="Enter characters">
+                        <p id="codes"></p>
+                    </div>
+
                     <div class="button">
                         <input type="submit" value="Inquire">
                     </div>
@@ -107,35 +115,14 @@
                 </div>
             </div>
             <div id="disclaimer">
-                <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
+                <p>This website is designed and created solely for educational purposes only at Westcliff University.
+                    All contents are not intended for any commercial gain or use.</p>
             </div>
         </footer>
     </div>
 
-    <script>
-        // Show partners footer using Javascript codes
-        (function buildPartners() {
-            var data = [
-                { src: 'images/partners/partner-bustour.png', alt: 'Partner Bus Tours' },
-                { src: 'images/partners/partner-cabinrental.png', alt: 'Partner Cabin Rental' },
-                { src: 'images/partners/partner-campingadv.png', alt: 'Partner Camping Adventure' },
-                { src: 'images/partners/partner-collegetours.png', alt: 'Partner College Tours' },
-                { src: 'images/partners/partner-rentalbike.png', alt: 'Partner Bike Rentals' },
-                { src: 'images/partners/partner-tourgroup.png', alt: 'Partner Tour Group' }
-            ];
-            var list = document.getElementById('partners');
-            if (!list) return;
-            for (var i = 0; i < data.length; i++) {
-                var li = document.createElement('li');
-                li.className = 'partner';
-                var img = document.createElement('img');
-                img.setAttribute('src', data[i].src);
-                img.setAttribute('alt', data[i].alt);
-                li.appendChild(img);
-                list.appendChild(li);
-            }
-        })();
-    </script>
+    <!-- Partners -->
+    <script src="js/site_scripts.js"></script>
 </body>
 
 </html>
