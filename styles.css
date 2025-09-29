@@ -366,20 +366,42 @@ body {
 
 #contact .button {
     margin-top: .75rem;
+    /* same width as the input/textarea column */
+    width: 460px;
+    /* push the button to the right edge of that column */
+    text-align: right;
 }
 
-#contact .button input[type="submit"] {
-    background: #4977D1;
+form .button input {
+    /* background-color: #4977D1; */
     color: #fff;
     border: none;
-    padding: .6rem 1.75rem;
-    cursor: pointer;
+    width: 8em;
+    height: 2.5em;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
-#contact .button input[type="submit"]:hover {
-    opacity: .9;
+#contact .randomcode {
+    /* same width as textarea/input column */
+    width: 460px;
+    /* keep responsive */
+    max-width: 100%;
+    /* align input + code to the right edge of that column */
+    text-align: right;
 }
 
+#contact .randomcode input[type="text"] {
+    width: 180px;
+    margin-right: .5rem;
+    display: inline-block;
+}
+
+#contact .randomcode #codes {
+    display: inline-block;
+    background: #d3d3d3;
+    padding: .3em .6em;
+}
 
 /* ========== Page: Cliffs — Header image & Grid ========== */
 
@@ -440,7 +462,7 @@ section.cliff-grid {
     color: #3a3a3a;
     text-align: center;
     padding: 12px 0;
-    background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%); /* ADDED */
+    background: linear-gradient(0deg, rgba(251, 215, 139, 1) 0%, rgba(118, 213, 245, 1) 100%);
 }
 
 #home #timeofday #clock {
