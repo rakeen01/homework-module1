@@ -469,3 +469,72 @@ section.cliff-grid {
     font-weight: 700;
     color: #125688;
 }
+
+/* lightbox */
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+    display: flex;
+    /* always flex, so centering works */
+    align-items: center;
+    /* vertical center */
+    justify-content: center;
+    /* horizontal center */
+    opacity: 0;
+    /* hidden by default */
+    pointer-events: none;
+    /* ignore clicks when hidden */
+    transition: opacity .18s ease;
+    /* smooth fade */
+    z-index: 9999;
+}
+
+#lightbox.show {
+    opacity: 1;
+    /* visible */
+    pointer-events: auto;
+    /* clickable */
+}
+
+#lightbox .lb-frame {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: #eee;
+    padding: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+}
+
+#lightbox .lb-frame img {
+    display: block;
+    max-width: 90vw;
+    max-height: 80vh;
+    height: auto;
+    width: auto;
+}
+
+#lightbox .lb-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    font-weight: bold;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+/* keep the pointer cursor for thumbs */
+.cliff-grid .cliff-card img {
+    cursor: pointer;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
