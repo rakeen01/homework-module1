@@ -5,12 +5,18 @@
     <title>Great Cliff's</title>
     <meta charset="utf-8">
 
+    <!-- for responsive webpage -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body id="home">
-    <div class="container">
+    <div id="container">
         <header>
             <div class="main-header">
                 <div class="logo">
@@ -34,17 +40,34 @@
 
         <main>
             <h2>Introducing California's Greatest Cliffs</h2>
-            <h3>What is so unique about California cliffs?</h3>
-            <p>California cliffs are one of a kind in the United States where no cliffs are as magnificent and beautiful
-                as them. And California is the only state that have cliffs that fronts all possible environments: sea,
-                river, mountains and canyons.
-                There are four such individual unique cliffs: West Cliff, North Cliff, East Cliff and South Cliff. All
-                offer fantastic overlooking views, recreational areas, camping sites, wildlife watch spots and overnight
-                cabins.</p>
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div>
+                        <h2>What is so unique about California cliffs?</h2>
+                        <p>
+                            California cliffs are one of a kind in the United States where
+                            no cliffs are as manificent and beautiful as them. And
+                            California is the only state that have cliffs that fronts all
+                            possible environments: sea, river, mountains and canyons. There
+                            are four such individual unique cliffs: West Cliff, North Cliff,
+                            East Cliff and South Cliff. All offer fantastic overlooking
+                            views, recreational areas, camping sites, wildlife watch spots
+                            and overnight cabins.
+                        </p>
+                    </div>
+                </div>
 
-            <h3>Where are these cliffs?</h3>
-            <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. The
-                closest cliff to Irvine is West Cliff, which is the most popular and most visited.</p>
+                <div class="col-md-6">
+                    <div>
+                        <h2>Where are these cliffs?</h2>
+                        <p>
+                            Located within a 100 mile radius from Irvine, California, they
+                            can be reached by roads easily. The closest cliff to Irvine is
+                            West Cliff, which is the most popular and most visited.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <section>
@@ -79,6 +102,11 @@
 
     <!-- Partners -->
     <script src="js/site_scripts.js"></script>
+
+    <!-- Bootstrap JS chain -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
