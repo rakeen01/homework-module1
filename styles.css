@@ -16,7 +16,6 @@ header {
     border: 1px solid #d9d9d9;
     padding: 25px;
     min-height: 350px;
-    /* matches the screenshot spacing */
     margin-top: 1em;
 }
 
@@ -593,7 +592,7 @@ body.no-scroll {
     overflow: hidden;
 }
 
-/* 1️⃣  Small screens: stack footer copy + social icons */
+/*  Small screens: stack footer copy + social icons */
 @media (max-width: 768px) {
     footer #nondisclaimer .copy {
         padding: 3.5em 0;
@@ -610,7 +609,7 @@ body.no-scroll {
     }
 }
 
-/* 2️⃣  Navbar + partners responsiveness at tablet/phone widths */
+/* Navbar + partners responsiveness at tablet/phone widths */
 @media (max-width: 992px) {
     .logo img {
         position: relative;
@@ -678,9 +677,9 @@ body.no-scroll {
         /* sit below the logo */
     }
 
-    /* allow the page text to reflow (your desktop rule fixes width) */
+    /* allow the page text to reflow */
     main {
-        /* overrides your desktop width */
+        /* overrides desktop width */
         padding: 3em 1em;
         margin: 0;
         width: auto;
@@ -767,7 +766,7 @@ section #partners .partner {
     margin: 0;
     /* spacing comes from grid gap */
     padding: 1.3em 1.5em;
-    /* your existing circle padding */
+    /* existing circle padding */
     border-radius: 50%;
     background: #fff;
 }
@@ -775,4 +774,353 @@ section #partners .partner {
 section #partners .partner img {
     width: 110px;
     height: 110px;
+}
+
+/* Desktop guards — keep desktop unchanged */
+.menu-toggle {
+    display: none;
+}
+
+/* hide hamburger by default */
+.main-menu {
+    display: block;
+}
+
+/* show full menu by default }
+
+/* Mobile-only hamburger + dropdown menu */
+@media (max-width: 992px) {
+    .menu-toggle {
+        position: absolute;
+        right: .75em;
+        top: .6em;
+        width: 42px;
+        height: 32px;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 4px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 101;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #6b6b6b;
+        position: relative;
+    }
+
+    .menu-toggle .bar::before,
+    .menu-toggle .bar::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 2px;
+        background: #6b6b6b;
+    }
+
+    .menu-toggle .bar::before {
+        top: -6px;
+    }
+
+    .menu-toggle .bar::after {
+        top: 6px;
+    }
+
+    /* hide menu on mobile; show only when toggled */
+    .main-menu {
+        display: none;
+    }
+
+    .main-menu.open {
+        display: block;
+        z-index: 100;
+    }
+}
+
+/* mobile white header bar that perfectly fills the header */
+@media (max-width: 992px) {
+    .main-header {
+        position: relative;
+        padding: .5em .75em;
+        /* spacing inside the bar */
+    }
+
+    .main-header::before {
+        content: "";
+        position: absolute;
+        /* Fill the header’s full height — no tiny gap/line */
+        top: 0;
+        bottom: 0;
+        left: .75em;
+        right: .75em;
+        background: rgba(255, 255, 255, .85);
+        border-radius: 4px;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Keep logo at its natural size above the bar */
+    .main-header .logo img {
+        position: relative;
+        z-index: 1;
+        float: none;
+        /* ensure header height expands */
+        display: block;
+        width: 125px;
+        height: auto;
+    }
+
+    /* Keep existing hamburger + dropdown behavior */
+    .menu-toggle {
+        position: absolute;
+        right: .75em;
+        top: .6em;
+        z-index: 2;
+        display: flex;
+    }
+
+    .main-menu {
+        position: absolute;
+        right: .75em;
+        top: calc(100% + .4em);
+    }
+
+    .main-menu.open {
+        display: block;
+        z-index: 100;
+    }
+}
+
+/* Center the hamburger icon vertically inside the white header bar */
+@media (max-width: 992px) {
+    .main-header {
+        display: flex;
+        align-items: center;
+        /* vertically center logo and toggle */
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 6px;
+        padding: 0.5em 0.9em;
+        margin: 0.75em auto;
+        width: calc(100% - 1.5em);
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .main-header .logo img {
+        width: 125px;
+        height: auto;
+        float: none;
+        /* let flexbox handle it */
+    }
+
+    .menu-toggle {
+        position: static;
+        /* remove absolute positioning */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 32px;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+    }
+}
+
+@media (max-width: 992px) {
+    .main-header {
+        position: relative;
+        /* anchor dropdown inside the bar */
+        display: flex;
+        /* center logo + hamburger */
+        align-items: center;
+        /* vertical centering */
+        justify-content: space-between;
+        /* logo left, hamburger right */
+        width: clamp(320px, 85vw, 640px);
+        /* centered, not full-bleed */
+        margin: 0.9em auto 0;
+        /* center on the page */
+        padding: 0.55em 0.9em;
+        /* comfortable but tight */
+        background: rgba(255, 255, 255, .88);
+        /* lighter, lets image show through */
+        border: 1px solid rgba(0, 0, 0, .05);
+        /* soft edge */
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .10), 0 2px 8px rgba(0, 0, 0, .08);
+        /* subtle lift */
+        -webkit-backdrop-filter: saturate(160%) blur(4px);
+        backdrop-filter: saturate(160%) blur(4px);
+    }
+
+    .main-header .logo img {
+        /* scale logo nicely */
+        width: clamp(110px, 28vw, 160px);
+        height: auto;
+        float: none;
+        /* let flex do the layout */
+        display: block;
+    }
+
+    .menu-toggle {
+        /* keep perfectly centered vertically */
+        position: absolute;
+        right: 0.9em;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 32px;
+        border: 1px solid rgba(0, 0, 0, .12);
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+        z-index: 2;
+    }
+
+    /* dropdown: open just under the centered bar, aligned to its right edge */
+    .main-menu {
+        position: absolute;
+        right: 0.9em;
+        top: calc(100% + .5rem);
+        display: none;
+        /* closed by default on mobile */
+        background: #fff;
+    }
+
+    .main-menu.open {
+        display: block;
+        z-index: 100;
+    }
+}
+
+/* =============================== */
+
+/* Mobile dropdown: remove white “padding” and align items */
+@media (max-width: 992px) {
+    .main-menu {
+        width: 220px;
+        /* keep panel narrow; tweak to taste */
+        padding: 0;
+        border: 1px solid rgba(0, 0, 0, .12);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, .12);
+        background: #fff;
+    }
+
+    .main-menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .main-menu ul li {
+        /* vertical stack, no side padding */
+        display: block;
+        float: none;
+        padding: 0;
+        /* overrides desktop 25px */
+        border-left: none;
+        /* no left rule from desktop */
+        border-bottom: 1px solid rgba(202, 204, 202, .6);
+        line-height: 1;
+        /* normal line-height; the link will pad */
+    }
+
+    .main-menu ul li:last-child {
+        /* tidy bottom border */
+        border-bottom: none;
+    }
+
+    .main-menu ul li a {
+        /* make each row clickable + spacing */
+        display: block;
+        padding: .9em 1rem;
+        color: #555;
+        text-decoration: none;
+    }
+
+    .main-menu ul li a:hover {
+        color: #9ed034;
+        background: rgba(158, 208, 52, .08);
+        /* subtle hover */
+    }
+
+    .main-menu ul li.active {
+        /* keep active look */
+        background: #9ed034;
+        border: none;
+    }
+
+    .main-menu ul li.active a {
+        color: #fff;
+    }
+}
+
+/* make the hamburger version occupy the same space as desktop */
+@media (max-width: 992px) {
+    .main-header {
+        /* desktop footprint */
+        width: 700px;
+        /* identical to desktop panel */
+        max-width: 90vw;
+        /* safety when the screen is smaller than 700px */
+        height: 100px;
+        min-height: 100px;
+        margin: .9em auto 0;
+        /* centered */
+        padding: 0 .9em;
+        /* no extra vertical padding that adds height */
+
+        /* neutralize earlier rules that stretched it across */
+        background: rgba(255, 255, 255, .88);
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .10), 0 2px 8px rgba(0, 0, 0, .08);
+    }
+
+    .main-header::before {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    /* keep logo the same size as desktop (no upsizing at the breakpoint) */
+    .main-header .logo img {
+        height: 100px;
+        /* same as desktop */
+        width: auto;
+        /* preserve aspect ratio */
+        float: none;
+        /* flex handles the layout */
+        display: block;
+    }
+
+    /* keep the hamburger centered vertically in the 100px header */
+    .menu-toggle {
+        position: absolute;
+        right: .9em;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 32px;
+    }
+
+    /* dropdown opens under the 100px bar */
+    .main-menu {
+        position: absolute;
+        right: .9em;
+        top: calc(100% + .5rem);
+    }
 }
