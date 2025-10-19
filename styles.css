@@ -1124,3 +1124,392 @@ section #partners .partner img {
         top: calc(100% + .5rem);
     }
 }
+
+/* Sticky Bootstrap navbar visuals */
+.navbar {
+    background: rgba(38, 41, 61, 0.7);
+}
+
+.navbar .nav-link {
+    color: rgb(255, 255, 255);
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    opacity: .85;
+}
+
+.sticky-top {
+    z-index: 1030;
+}
+
+/* keep above hero */
+
+/* Make header an empty spacer (image moved to body) */
+header {
+    min-height: 275px;
+}
+
+/* overrides previous 400px for these pages */
+
+/* move header background images → body backgrounds */
+body#activities {
+    background: white url("images/runfly.jpg") no-repeat;
+    background-size: 100% 400px;
+}
+
+body#cliffs {
+    background: white url("images/forest_cliff.jpg") no-repeat;
+    background-size: 100% 400px;
+}
+
+body#contact {
+    background: white url("images/cliff_rock.jpg") no-repeat;
+    background-size: 100% 400px;
+}
+
+/* ensure main sits below sticky bar visually even when transparent */
+body#activities main,
+body#cliffs main,
+body#contact main {
+    position: relative;
+    z-index: 1;
+}
+
+/* remove legacy header backgrounds so only body shows image */
+#activities header,
+#cliffs header,
+#contact header {
+    background: none !important;
+    /* kill the duplicate layer */
+}
+
+/* keep the hero image controlled on body */
+body#activities,
+body#cliffs,
+body#contact {
+    background-position: top center;
+    /* line up under navbar */
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* Home page—hide the legacy white panel */
+#home .main-header {
+    display: none !important;
+}
+
+/* Move the hero image from <header> to <body> on Home */
+#home header {
+    background: none !important;
+    /* stop painting duplicate */
+    min-height: 275px;
+    /* match other pages' spacer */
+    padding-top: 0;
+    /* remove extra top gap */
+}
+
+body#home {
+    background: white url("images/cliff_ocean.jpg") no-repeat top center;
+    background-size: 100% 400px;
+    /* same visual height as others */
+}
+
+/* ensure content layers over the hero cleanly */
+body#home main,
+body#home #timeofday {
+    position: relative;
+    z-index: 1;
+}
+
+/* extend Home hero so it reaches the clock bar */
+body#home {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 460px !important;
+    /* was 400px */
+}
+
+/* optional: if a hairline remains on some screens, nudge the clock up */
+#timeofday {
+    margin-top: -4px !important;
+}
+
+/* Cliffs page – make the gallery and content fluid */
+body#cliffs main {
+    padding: 2rem 1rem !important;
+    /* lighten the big side padding on small/med */
+}
+
+@media (min-width: 992px) {
+    body#cliffs main {
+        padding: 3rem 3rem !important;
+    }
+}
+
+/* unlock the fixed 1110px width so it can shrink */
+body#cliffs .cliff-grid {
+    width: 100% !important;
+    max-width: 1110px;
+    /* keep your desktop max */
+    margin: 1.5rem auto 2rem !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* same 2-col desktop */
+    gap: 1.5rem !important;
+}
+
+/* phones: stack cards 1 per row, tighter margins */
+@media (max-width: 767.98px) {
+    body#cliffs .cliff-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        margin: 1rem 0.75rem !important;
+    }
+}
+
+/* partners strip: ensure it doesn't pin the page wide */
+body#cliffs section #partners {
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+/* keep Activities table caption at the top */
+#activities table caption,
+body#activities table caption {
+    caption-side: top !important;
+    display: table-caption;
+    padding: 0.6rem 0.8rem;
+    background: #7b2f22;
+    /* your brown */
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Make the collapsed navbar overlay the hero instead of pushing content */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+/* keep sticky */
+.navbar .navbar-collapse {
+    position: absolute;
+    /* take it out of the document flow */
+    top: 100%;
+    /* sit right below the bar */
+    left: 0;
+    right: 0;
+    background: rgba(38, 41, 61, 0.92);
+    /* solid enough over the image */
+    padding: .5rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* When wide (expanded-xl), restore normal inline layout */
+@media (min-width: 1200px) {
+    .navbar .navbar-collapse {
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        border-top: 0 !important;
+    }
+}
+
+/* Nice-to-have: make links fill each row in the overlay */
+.navbar .nav-link {
+    display: block;
+    padding: .75rem 1rem;
+}
+
+/* boxed-green "active" tab for BOTH views */
+
+/* Desktop (expanded ≥1200px): segmented band + green active box */
+@media (min-width: 1200px) {
+    .navbar .navbar-nav {
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .navbar .nav-item+.nav-item {
+        border-left: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .navbar .nav-link {
+        padding: .9rem 1.75rem;
+        color: #fff;
+    }
+
+    .navbar .nav-item.active {
+        background: #9ed034;
+        /* <-- boxed green */
+    }
+
+    .navbar .nav-item.active .nav-link {
+        color: #fff;
+        /* white text on green */
+        font-weight: 600;
+    }
+}
+
+/* Hamburger (collapsed <1200px): stacked items, green highlight */
+@media (max-width: 1199.98px) {
+    .navbar .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .navbar .nav-link {
+        display: block;
+        padding: .8rem 1rem;
+        color: #fff;
+    }
+
+    .navbar .nav-item.active {
+        background: #9ed034;
+        /* <-- boxed green */
+    }
+
+    .navbar .nav-item.active .nav-link {
+        color: #fff;
+        font-weight: 600;
+    }
+}
+
+/* Base bar stays translucent and sticky (already set elsewhere) */
+.navbar {
+    background: rgba(38, 41, 61, .70);
+}
+
+/* Center the menu band and give it the segmented look on desktop */
+@media (min-width: 1200px) {
+    .navbar .navbar-nav {
+        margin-left: auto;
+        /* center */
+        margin-right: auto;
+        /* center */
+        max-width: 880px;
+        /* width of the band from mock */
+        background: rgba(255, 255, 255, .12);
+        border-radius: 4px;
+        overflow: hidden;
+        /* keep green box clipped */
+        box-shadow: 0 1px 0 rgba(0, 0, 0, .15) inset;
+    }
+
+    .navbar .nav-item+.nav-item {
+        border-left: 1px solid rgba(255, 255, 255, .22);
+        /* vertical separators */
+    }
+
+    .navbar .nav-link {
+        padding: 1rem 2.2rem;
+        /* tall tabs like mock */
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    /* Boxed green active tab */
+    .navbar .nav-item.active {
+        background: #9ed034;
+    }
+
+    .navbar .nav-item.active .nav-link {
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+/* === COLLAPSED (HAMBURGER) PANEL — FLOAT OVER HERO =================== */
+/* Pull the collapse out of the flow so it doesn't push content down */
+.navbar .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    /* line up near the toggler like mock */
+    left: auto;
+    width: 260px;
+    /* panel width from mock */
+    background: rgba(38, 41, 61, .92);
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-top: 0;
+    border-radius: 4px;
+    padding: .25rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    display: none;
+    /* default hidden; Bootstrap toggles .show */
+    z-index: 1030;
+}
+
+/* Only apply overlay behavior when actually collapsed */
+@media (min-width: 1200px) {
+    .navbar .navbar-collapse {
+        position: static;
+        width: auto;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+.navbar .navbar-collapse.show {
+    display: block;
+}
+
+/* ensure visibility */
+
+/* Rows inside the overlay */
+.navbar .nav-item {
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+
+.navbar .nav-item:last-child {
+    border-bottom: 0;
+}
+
+.navbar .nav-link {
+    display: block;
+    padding: .9rem 1.1rem;
+    color: #fff;
+}
+
+/* Green active row in overlay */
+.navbar .nav-item.active {
+    background: #9ed034;
+}
+
+.navbar .nav-item.active .nav-link {
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Small polish so the centered band & overlay feel identical */
+.navbar .nav-link:hover {
+    opacity: .9;
+    text-decoration: none;
+}
+
+/* ADDED: full green box with a proper heading that doesn't punch a hole */
+#contact fieldset {
+    border: 2px solid #9ed034;
+    /* the original green border */
+    border-radius: 2px;
+    padding: 1.25rem 1.25rem 1.5rem;
+    /* space inside the box */
+}
+
+/* Visual replacement for legend */
+#contact .contact-legend {
+    margin: 0 0 .75rem .6rem;
+    /* slight inset like your mock */
+    padding: 0 .6rem;
+    font: 700 1.6rem/1.2 Arial, Helvetica, sans-serif;
+    color: #4a64bd;
+    /* same blue as before */
+    text-transform: uppercase;
+    background: transparent;
+    /* no band-aid lines */
+}
