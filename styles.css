@@ -1513,3 +1513,59 @@ body#activities table caption {
     background: transparent;
     /* no band-aid lines */
 }
+
+#activities .modal-content {
+    border-radius: .5rem;
+}
+
+#activities .modal-title {
+    font-weight: 600;
+}
+
+#displaySelected {
+    display: none;
+}
+
+#showSelectedBtn {
+    display: block;
+    margin: 20px auto;
+    /* centers horizontally */
+    position: static;
+    /* remove sticky corner behavior */
+}
+
+/* make Send button in contact form responsive */
+#contact form .form-actions {
+    text-align: right;
+    /* desktop: align right */
+}
+
+#contact form .form-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    /* little space between icon and text */
+}
+
+/* Kill any old styles that fixed the button position/width */
+#contact form input[type="submit"],
+#contact form .button,
+#contact #sendBtn,
+#contact input#send {
+    width: auto !important;
+    float: none !important;
+    position: static !important;
+    margin: 0 !important;
+}
+
+/* Small screens: center the button and let it grow a bit */
+@media (max-width: 575.98px) {
+    #contact form .form-actions {
+        text-align: center;
+    }
+
+    #contact form .form-actions .btn {
+        width: 100%;
+        max-width: 220px;
+    }
+}

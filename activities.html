@@ -41,55 +41,57 @@
                 but are partners with the state department. Therefore, for schedule inquiries or information, please
                 contact them directly. For a list of activities, please refer to the table below:</p>
 
-            <table>
-                <caption>Activities at the Cliffs</caption>
-                <thead>
-                    <tr>
-                        <th>Activity</th>
-                        <th>West Cliff</th>
-                        <th>North Cliff</th>
-                        <th>East Cliff</th>
-                        <th>South Cliff</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>Hiking</th>
-                        <td>College Hikes</td>
-                        <td>Family Fun</td>
-                        <td>Treasure Trails</td>
-                        <td>Canyon Explorer</td>
-                    </tr>
-                    <tr>
-                        <th>Kayak</th>
-                        <td>Western Kayak Meetup</td>
-                        <td>Not Available</td>
-                        <td>Youth Kayaking</td>
-                        <td>Kayak Down</td>
-                    </tr>
-                    <tr>
-                        <th>Skydiving</th>
-                        <td>Seacliff Diving</td>
-                        <td>Sky is the limit</td>
-                        <td>Not Available</td>
-                        <td>Sky Diving for Beginners</td>
-                    </tr>
-                    <tr>
-                        <th>Biking</th>
-                        <td>Bicycle for One</td>
-                        <td>Not Available</td>
-                        <td>Bike Meetup Group</td>
-                        <td>Not Available</td>
-                    </tr>
-                    <tr>
-                        <th>Camping</th>
-                        <td>Youth Camp</td>
-                        <td>Rent a Tent</td>
-                        <td>Campground Adventure</td>
-                        <td>Sunset Camping</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table id="activitiesTable" class="table table-bordered table-hover">
+                    <caption>Activities at the Cliffs</caption>
+                    <thead>
+                        <tr>
+                            <th>Activity</th>
+                            <th>West Cliff</th>
+                            <th>North Cliff</th>
+                            <th>East Cliff</th>
+                            <th>South Cliff</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Hiking</th>
+                            <td>College Hikes</td>
+                            <td>Family Fun</td>
+                            <td>Treasure Trails</td>
+                            <td>Canyon Explorer</td>
+                        </tr>
+                        <tr>
+                            <th>Kayak</th>
+                            <td>Western Kayak Meetup</td>
+                            <td>Not Available</td>
+                            <td>Youth Kayaking</td>
+                            <td>Kayak Down</td>
+                        </tr>
+                        <tr>
+                            <th>Skydiving</th>
+                            <td>Seacliff Diving</td>
+                            <td>Sky is the limit</td>
+                            <td>Not Available</td>
+                            <td>Sky Diving for Beginners</td>
+                        </tr>
+                        <tr>
+                            <th>Biking</th>
+                            <td>Bicycle for One</td>
+                            <td>Not Available</td>
+                            <td>Bike Meetup Group</td>
+                            <td>Not Available</td>
+                        </tr>
+                        <tr>
+                            <th>Camping</th>
+                            <td>Youth Camp</td>
+                            <td>Rent a Tent</td>
+                            <td>Campground Adventure</td>
+                            <td>Sunset Camping</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div id="displaySelected">
                 <div id="result">
@@ -101,6 +103,30 @@
                 </div>
             </div>
         </main>
+
+        <button id="showSelectedBtn" type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal"
+            data-target="#activitiesModal">
+            Get Info
+        </button>
+
+
+        <div class="modal fade" id="activitiesModal" tabindex="-1" role="dialog" aria-labelledby="activitiesModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header py-2">
+                        <h5 class="modal-title" id="activitiesModalLabel">My selected activities to enquire:</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body"><!-- filled by JS --></div>
+                    <div class="modal-footer py-2">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Back to Activities</button>
+                        <a id="getInfoBtn" class="btn btn-primary" href="#">Get Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section>
             <ul id="partners"></ul>
